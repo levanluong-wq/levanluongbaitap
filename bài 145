@@ -1,0 +1,19 @@
+def ToBin(n):
+    res = ""
+    while n > 0:
+        res = str(n % 2) + res 
+        n //= 2
+    print(res)
+def ToHex(n):
+    hex_map = "0123456789ABCDEF" 
+    res = ""
+    while n > 0 :
+        res = hex_map[n %16] + res 
+        n //= 16 
+    print(res)
+# ===== Main =====
+x = int(input("nhập x: "))
+print ("Bin:", end=" ")
+ToBin(x)
+print("Hex:", end=" ")
+ToHex(x)
