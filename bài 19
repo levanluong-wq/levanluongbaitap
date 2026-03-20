@@ -1,0 +1,15 @@
+# Nhập thời điểm 1
+h1, m1, s1 = map(int, input("Nhập giờ phút giây [1]: ").split())
+# Nhập thời điểm 2
+h2, m2, s2 = map(int, input("Nhập giờ phút giây [2]: ").split())
+# Đổi về giây
+t1 = h1 * 3600 + m1 * 60 + s1
+t2 = h2 * 3600 + m2 * 60 + s2
+# Tính hiệu (lấy trị tuyệt đối để tránh âm)
+diff = abs(t2 - t1)
+# Đổi lại giờ phút giây
+h = diff // 3600
+diff %= 3600
+m = diff // 60
+s = diff % 60
+print(f"Hiệu thời gian: {h} giờ {m} phút {s} giây")
