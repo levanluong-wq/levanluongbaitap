@@ -1,0 +1,25 @@
+# Nhân 2 ma trận 3x3
+def nhan(A, B):
+    C = [[0]*3 for _ in range(3)]
+    for i in range(3):
+        for j in range(3):
+            for k in range(3):
+                C[i][j] += A[i][k] * B[k][j]
+    return C
+# Lũy thừa ma trận
+def luy_thua(A, k):
+    res = A
+    for _ in range(k - 1):
+        res = nhan(res, A)
+    return res
+# ===== Main =====
+A = [
+    [3, 8, 8],
+    [9, 2, 8],
+    [9, 3, 6]
+]
+k = int(input("Nhap luy thua (k > 1): "))
+Ak = luy_thua(A, k)
+# In kết quả
+for row in Ak:
+    print(*row)
